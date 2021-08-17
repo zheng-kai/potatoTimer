@@ -1,0 +1,88 @@
+/**index.wxss**/
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+}
+.text-color{
+  color: var(--primary-color);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  height: 10vh;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  font-size: 16px;
+  font-weight: bold;
+}
+.time-text{
+  font-size: 22px;
+}
+.img-btn{
+  padding: 8px;
+  width:24px;
+  height:24px;
+}
+.timer-container {
+  height: 80vw;
+  width: 80vw;
+  border: 2px solid var(--primary-color);
+  border-radius: 40vw;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-background {
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
+  height: calc(80vw - 2px);
+  width: calc(80vw - 2px);
+  border-radius: 50%;
+  background-color: var(--sub-primary-color);
+  color: var(--background-color);
+}
+
+.timer-percent {
+  background-color: var(--background-color);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 80vw;
+  overflow: hidden;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.timer-shadow {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 80vw;
+  width: 80vw;
+}
+.timer-text{
+  font-size: 30px;
+}
+.button {
+  margin-bottom: 40px;
+  border-radius: 10px;
+}

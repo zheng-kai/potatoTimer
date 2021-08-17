@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="tab text-color">
+    <view class="tab-item">
+      <view>
+        <text>休息时长</text>
+      </view>
+      <view class="center">
+        <image class="img-btn" bindtap="minusB" src="/pages/assets/minus.svg"></image>
+        <text class="time-text">{{breakTime}}</text>
+        <image class="img-btn" bindtap="plusB" src="/pages/assets/plus.svg"></image>
+      </view>
+    </view>
+    <view class="tab-item">
+      <view>
+        <text>番茄时长</text>
+      </view>
+      <view class="center">
+        <image class="img-btn" bindtap="minusP" src="/pages/assets/minus.svg"></image>
+        <text class="time-text">{{potatoTime}}</text>
+        <image class="img-btn" bindtap="plusP" src="/pages/assets/plus.svg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="timer-container">
+    <view class="timer-background center">
+      <view class="timer-text">
+        {{working?'Session':'Break'}}
+        <view class="center">
+          {{minute<10? '0' +minute:minute}}:{{second<10? '0' +second : second}} </view>
+        </view>
+      </view>
+      <view class="timer-percent" style="height:{{100 - timerPercent}}%">
+        <view class="timer-shadow center text-color">
+          <view class="timer-text">
+            {{working?'Session':'Break'}}
+            <view class="center">
+              {{minute<10? '0' +minute:minute}}:{{second<10? '0' +second : second}} </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button plain="true" class="button" bind:tap="startPauseClick">
+        <text class="text-color">开始/暂停</text>
+      </button>
+      <mp-dialog title="倒计时结束" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>继续工作 or 开始休息</view>
+      </mp-dialog>
+    </view>
